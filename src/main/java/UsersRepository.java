@@ -1,10 +1,10 @@
 import java.util.ArrayList;
 
 public interface UsersRepository {
-    ArrayList<Object> allUsers();
-    ArrayList<Object> usersUnderEighteen();
-    ArrayList<Object> usersWhoseNameWidthO();
-    ArrayList<Object> usersBetweenTheAgesEighteenAndSixty();
+    ArrayList<User> allUsers();
+    ArrayList<User> usersUnderEighteen();
+    ArrayList<User> usersWhoseNameWidthO();
+    ArrayList<User> usersBetweenTheAgesEighteenAndSixty();
     int numberOfUsersWidthALatterAinTheirName();
     int numberOfTheAdultUsers();
 }

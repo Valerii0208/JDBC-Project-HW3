@@ -4,14 +4,14 @@ import java.util.ArrayList;
 public class UsersImpl implements UsersRepository{
     @SneakyThrows
     @Override
-    public ArrayList<Object> allUsers() {
+    public ArrayList<User> allUsers() {
         System.out.println("============================================");
         System.out.println("ALL USERS IN TABLE:");
         System.out.println("============================================");
 
         var statement = DbConnection.connection.createStatement();
         var resultSet = statement.executeQuery(SqlQueries.SELECT_ALL_USERS);
-        var allUsersInTable = new ArrayList<>();
+        var allUsersInTable = new ArrayList<User>();
         while (resultSet.next()) {
             User user = new User();
             user.setId(resultSet.getInt("id"));
@@ -27,14 +27,14 @@ public class UsersImpl implements UsersRepository{
 
     @SneakyThrows
     @Override
-    public ArrayList<Object> usersUnderEighteen() {
+    public ArrayList<User> usersUnderEighteen() {
         System.out.println("============================================");
         System.out.println("USERS UNDER EIGHTEEN: ");
         System.out.println("============================================");
 
         var statement = DbConnection.connection.createStatement();
         var resultSet = statement.executeQuery(SqlQueries.USERS_UNDER_EIGHTEEN);
-        var usersUnderEighteen = new ArrayList<>();
+        var usersUnderEighteen = new ArrayList<User>();
         while (resultSet.next()) {
             User user = new User();
             user.setId(resultSet.getInt("id"));
@@ -49,13 +49,13 @@ public class UsersImpl implements UsersRepository{
 
     @SneakyThrows
     @Override
-    public ArrayList<Object> usersWhoseNameWidthO() {
+    public ArrayList<User> usersWhoseNameWidthO() {
         System.out.println("============================================");
         System.out.println("USERS WHOSE NAME ENDS WIDTH O: ");
         System.out.println("============================================");
         var statement = DbConnection.connection.createStatement();
         var resultSet = statement.executeQuery(SqlQueries.USERS_WHOSE_NAME_WIDTH_O);
-        var usersWhoseNameWidthO = new ArrayList<>();
+        var usersWhoseNameWidthO = new ArrayList<User>();
         while (resultSet.next()) {
             User user = new User();
             user.setId(resultSet.getInt("id"));
@@ -70,14 +70,14 @@ public class UsersImpl implements UsersRepository{
 
     @SneakyThrows
     @Override
-    public ArrayList<Object> usersBetweenTheAgesEighteenAndSixty() {
+    public ArrayList<User> usersBetweenTheAgesEighteenAndSixty() {
         System.out.println("============================================");
         System.out.println("USERS BETWEEN THE AGES 18 - 60: ");
         System.out.println("============================================");
 
         var statement = DbConnection.connection.createStatement();
         var resultSet = statement.executeQuery(SqlQueries.SELECT_ALL_USERS_BETWEEN_18_60);
-        var usersBetweenTheAgesEighteenAndSixty = new ArrayList<>();
+        var usersBetweenTheAgesEighteenAndSixty = new ArrayList<User>();
         while (resultSet.next()) {
             User user = new User();
             user.setId(resultSet.getInt("id"));
